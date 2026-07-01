@@ -113,7 +113,7 @@ a { text-decoration: none; color: inherit; }
 .section-head h2, .why-text h2, .cta h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); color: var(--purple); margin-top: 8px; font-weight: 800; }
 .section-sub { color: var(--muted); margin-top: 10px; }
 
-/* Service cards */
+/* Service cards Grid */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .card {
   background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
@@ -122,10 +122,32 @@ a { text-decoration: none; color: inherit; }
 .card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--purple), var(--yellow), var(--orange)); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
 .card:hover { transform: translateY(-8px); box-shadow: var(--shadow); border-color: transparent; }
 .card:hover::before { transform: scaleX(1); }
+
+/* Premium Vector Icon Container (Bootstrap Style) */
 .card-icon {
-  width: 60px; height: 60px; border-radius: 14px; display: grid; place-items: center;
-  font-size: 1.7rem; background: var(--purple-soft); margin-bottom: 16px;
+  width: 64px; 
+  height: 64px; 
+  border-radius: 16px; 
+  display: grid; 
+  place-items: center;
+  background: var(--purple-soft); 
+  margin-bottom: 20px;
+  color: var(--purple);
+  transition: all .25s ease;
 }
+
+/* Icon Font Scaling */
+.card-icon i {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+/* Hover effects inside card icons */
+.card:hover .card-icon {
+  background: var(--orange);
+  color: var(--white);
+}
+
 .card h3 { color: var(--purple); margin-bottom: 8px; font-size: 1.2rem; }
 .card p { color: var(--muted); font-size: .96rem; }
 
@@ -336,7 +358,6 @@ a { text-decoration: none; color: inherit; }
   .lightbox-nav { opacity: 1; visibility: visible; }
 }
 
-
 @media (max-width: 520px) {
   .lightbox-nav {
     width: 42px;
@@ -346,4 +367,3 @@ a { text-decoration: none; color: inherit; }
   .lightbox-prev { left: 10px; }
   .lightbox-next { right: 10px; }
 }
-
