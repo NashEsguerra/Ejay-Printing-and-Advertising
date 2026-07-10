@@ -182,7 +182,7 @@ const serviceImages = {
     "images/Sticker Printing/Sticker 9.jpg",
     "images/Sticker Printing/Sticker 10.jpg",
     "images/Sticker Printing/Sticker 11.jpg",
-    "",
+    
 
   ],
   sintra: [
@@ -227,13 +227,6 @@ const serviceImages = {
     "images/Neon Lights Display/neon5.jpg",
     "images/Neon Lights Display/neon6.jpg",
   ],
-  booth: [
-    "images/Exhibit Booth/booth1.jpg",
-    "images/Exhibit Booth/booth2.jpg",
-    "images/Exhibit Booth/booth3.jpg",
-    "images/Exhibit Booth/booth4.jpg",
-    "images/Exhibit Booth/booth1.jpg",
-  ],
   
   giveaways: [
     "images/Giveaways/giveaways1.jpg",
@@ -254,14 +247,81 @@ const serviceImages = {
     "images/Giveaways/giveaways16.jpg",
   ],
 };
+// Exhibit Booth Fabrication gets its own data shape: each finished project
+// is shown as a PAIR of photos — the digital design mockup, then the actual
+// built/fabricated booth. Add a project by adding one object below and
+// dropping the two matching files into images/Exhibit Booth/.
+const boothProjects = [
+   {
+    title: "SM Aura Premier Booth",
+    mockup: "images/Exhibit Booth/Quantas Mock up.jpg",
+    final: "images/Exhibit Booth/quantas.jpg",
+  },
+   {
+    title: "World Trade Center Booth",
+    mockup: "images/Exhibit Booth/Jetstar mock up.jpg",
+    final: "images/Exhibit Booth/booth1.jpg",
+  },
+  {
+    title: "SMX MOA Booth",
+    mockup: "images/Exhibit Booth/popok Mock up.jpg",
+    final: "images/Exhibit Booth/booth3.jpg",
+  },
+  {
+    title: "SMX MOA Booth",
+    mockup: "images/Exhibit Booth/Text mock up.jpg",
+    final: "images/Exhibit Booth/booth4.jpg",
+  },
+  {
+    title: "World Trade Center Booth",
+    mockup: "images/Exhibit Booth/Natrue Mock up.jpg",
+    final: "images/Exhibit Booth/Natrue.jpg",
+  },
+  {
+    title: "SMX MOA Booth",
+    mockup: "images/Exhibit Booth/Amadeus Mock up.jpg",
+    final: "images/Exhibit Booth/Amadeus.jpg",
+  },
+];
+
 const PLACEHOLDER_IMG =
   "https://placehold.co/600x450/4B2A8F/FFC400?text=Add+Photo";
+const PLACEHOLDER_MOCKUP =
+  "https://placehold.co/600x450/EDE7F9/4B2A8F?text=Add+Mockup";
+const PLACEHOLDER_FINAL =
+  "https://placehold.co/600x450/4B2A8F/FFC400?text=Add+Final+Photo";
 
 const serviceModal = document.getElementById("serviceModal");
 if (serviceModal) {
   const modalGallery = document.getElementById("modalGallery");
   const modalTitle = document.getElementById("modalTitle");
-  const openServiceModal = (key, title) => {
+  const modalSub = document.getElementById("modalSub");
+
+  const renderBoothGallery = () => {
+    modalGallery.innerHTML = boothProjects
+      .map((project) => {
+        const mockupUrl = project.mockup && project.mockup.trim() ? project.mockup : PLACEHOLDER_MOCKUP;
+        const finalUrl = project.final && project.final.trim() ? project.final : PLACEHOLDER_FINAL;
+        return `
+          <div class="booth-project">
+            <p class="booth-project-title">${project.title}</p>
+            <div class="booth-pair">
+              <figure class="booth-figure">
+                <img src="${mockupUrl}" alt="${project.title} — design mockup" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER_MOCKUP}';">
+                <figcaption><i class="bi bi-pencil-square"></i> Design Mockup</figcaption>
+              </figure>
+              <div class="booth-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+              <figure class="booth-figure">
+                <img src="${finalUrl}" alt="${project.title} — final fabricated booth" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER_FINAL}';">
+                <figcaption><i class="bi bi-check-circle-fill"></i> Final Output</figcaption>
+              </figure>
+            </div>
+          </div>`;
+      })
+      .join("");
+  };
+
+  const renderGridGallery = (key, title) => {
     const imgs = serviceImages[key] || [];
     modalGallery.innerHTML = imgs
       .map((src) => {
@@ -269,6 +329,20 @@ if (serviceModal) {
         return `<img src="${url}" alt="${title} sample" loading="lazy" onerror="this.onerror=null;this.src='${PLACEHOLDER_IMG}';">`;
       })
       .join("");
+  };
+
+  const openServiceModal = (key, title) => {
+    const isBooth = key === "booth";
+    modalGallery.classList.toggle("booth-mode", isBooth);
+
+    if (isBooth) {
+      renderBoothGallery();
+      modalSub.textContent = "Every project shown as a pair — the digital design mockup, then the finished, fabricated booth.";
+    } else {
+      renderGridGallery(key, title);
+      modalSub.textContent = "Sample works";
+    }
+
     modalTitle.textContent = title;
     serviceModal.classList.add("open");
     serviceModal.setAttribute("aria-hidden", "false");
