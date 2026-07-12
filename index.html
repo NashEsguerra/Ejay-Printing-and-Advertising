@@ -145,19 +145,104 @@
   <!-- Why Us -->
   <section class="section section-soft" id="why">
     <div class="container why-grid">
-      <div class="why-image reveal">
-        <img src="https://placehold.co/520x440/FFC400/4B2A8F?text=Why+EJay" alt="Why choose EJay" />
+      <div class="why-visual reveal">
+        <div class="print-stack">
+          <svg viewBox="0 0 520 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of printed materials — tarpaulin, signage, and business card samples">
+            <defs>
+              <linearGradient id="whyBg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="var(--purple)" />
+                <stop offset="1" stop-color="var(--purple-dark)" />
+              </linearGradient>
+              <pattern id="halftone" width="24" height="24" patternUnits="userSpaceOnUse">
+                <circle cx="5" cy="5" r="2.2" fill="var(--yellow)" opacity="0.16" />
+                <circle cx="17" cy="17" r="2.2" fill="var(--yellow)" opacity="0.16" />
+              </pattern>
+            </defs>
+
+            <rect width="520" height="440" rx="28" fill="url(#whyBg)" />
+            <rect width="520" height="440" rx="28" fill="url(#halftone)" />
+
+            <!-- back sample: tarpaulin swatch -->
+            <g class="stack-card" transform="translate(74,54) rotate(-9)">
+              <rect width="240" height="156" rx="14" fill="var(--orange)" />
+              <rect x="20" y="22" width="120" height="10" rx="5" fill="#fff" opacity="0.85" />
+              <rect x="20" y="42" width="90" height="8" rx="4" fill="#fff" opacity="0.6" />
+              <circle cx="204" cy="118" r="24" fill="#fff" opacity="0.18" />
+            </g>
+
+            <!-- middle sample: signage swatch -->
+            <g class="stack-card" transform="translate(168,118) rotate(7)">
+              <rect width="230" height="150" rx="14" fill="var(--yellow)" />
+              <rect x="20" y="20" width="130" height="12" rx="6" fill="var(--purple)" opacity="0.85" />
+              <rect x="20" y="44" width="80" height="9" rx="4" fill="var(--purple)" opacity="0.55" />
+              <path d="M170 105 l22 -22 l22 22 z" fill="var(--purple)" opacity="0.35" />
+            </g>
+
+            <!-- front sample: business card with crop marks + CMYK swatch -->
+            <g class="stack-card" transform="translate(112,158) rotate(-3)">
+              <rect width="270" height="176" rx="16" fill="#ffffff" />
+
+              <!-- crop marks (pre-press detail) -->
+              <g stroke="var(--purple)" stroke-width="2" opacity="0.55">
+                <path d="M0 18 H14 M18 0 V14" />
+                <path d="M270 18 H256 M252 0 V14" />
+                <path d="M0 158 H14 M18 176 V162" />
+                <path d="M270 158 H256 M252 176 V162" />
+              </g>
+
+              <text x="30" y="70" font-family="Poppins, sans-serif" font-weight="800" font-size="30" fill="var(--purple)">EJAY</text>
+              <text x="30" y="94" font-family="Poppins, sans-serif" font-weight="600" font-size="12" letter-spacing="2" fill="var(--muted)">PRINTING &amp; ADVERTISING</text>
+
+              <!-- CMYK registration swatch -->
+              <g transform="translate(30,122)">
+                <circle cx="0" cy="0" r="8" fill="#00AEEF" />
+                <circle cx="22" cy="0" r="8" fill="#EC008C" />
+                <circle cx="44" cy="0" r="8" fill="var(--yellow)" />
+                <circle cx="66" cy="0" r="8" fill="var(--ink)" />
+              </g>
+              <circle cx="238" cy="130" r="26" fill="var(--purple-soft)" />
+              <path d="M228 130 l7 7 l13 -15" stroke="var(--purple)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+          </svg>
+        </div>
+        <div class="why-badge">
+          <strong>12+</strong>
+          <span>Years Printing Excellence</span>
+        </div>
       </div>
+
       <div class="why-text reveal">
         <p class="eyebrow">Why Choose Us</p>
         <h2>Bold quality, delivered on time</h2>
-        <ul class="feature-list">
-          <li><strong>⚡ Fast turnaround</strong> Rush jobs done same day without cutting corners.</li>
-          <li><strong>🎯 Sharp, vivid color</strong> Modern presses for crisp, accurate prints.</li>
-          <li><strong>💸 Honest pricing</strong> Competitive rates with no hidden fees.</li>
-          <li><strong>🎨 Free design help</strong> Our team polishes your artwork at no cost.</li>
-        </ul>
-        <a href="#quote" class="btn btn-primary">Request a Quote</a>
+        <p class="why-lead">From first proof to final print, every job runs through our own presses and our own quality checks — so what you approve is exactly what you get.</p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <span class="feature-icon purple">⚡</span>
+            <h4>Fast turnaround</h4>
+            <p>Rush jobs done same day without cutting corners.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon orange">🎯</span>
+            <h4>Sharp, vivid color</h4>
+            <p>Modern presses for crisp, accurate prints.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon yellow">💸</span>
+            <h4>Honest pricing</h4>
+            <p>Competitive rates with no hidden fees.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon purple">🎨</span>
+            <h4>Free design help</h4>
+            <p>Our team polishes your artwork at no cost.</p>
+          </div>
+        </div>
+
+        <div class="why-actions">
+          <a href="#quote" class="btn btn-primary">Request a Quote</a>
+          <span class="why-trust">★★★★★ <strong>500+</strong> businesses served</span>
+        </div>
       </div>
     </div>
   </section>
@@ -194,12 +279,21 @@
         <button class="filter" data-filter="give">Giveaways</button>
       </div>
       <div class="gallery" id="gallery">
-        <figure class="gallery-item" data-cat="booth"><img src="images/Exhibit Booth/booth2.jpg" alt="Exhibit booth" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>World Trade Exhibit Booth </figcaption></figure>
+        <figure class="gallery-item" data-cat="booth"><img src="images/Exhibit Booth/Amadeus.jpg" alt="Exhibit booth" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>SMX Exhibit Booth</figcaption></figure>
         <figure class="gallery-item" data-cat="booth"><img src="images/Exhibit Booth/booth3.jpg" alt="Exhibit booth" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>SMX Exhibit Booth</figcaption></figure>
+        <figure class="gallery-item" data-cat="booth"><img src="images/Exhibit Booth/booth4.jpg" alt="Exhibit booth" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>SMX Exhibit Booth</figcaption></figure>
+        <figure class="gallery-item" data-cat="sign"><img src="images/Sinages/sinage4.jpg" alt="Signage" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>Panaflex Signage</figcaption></figure>
         <figure class="gallery-item" data-cat="sign"><img src="images/Sinages/sinage5.jpg" alt="Signage" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>Illuminated Signage</figcaption></figure>
-        <figure class="gallery-item" data-cat="tarp"><img src="images/Tarpaulin Printing/tarpaulin2.jpg" alt="Tarpaulin" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>Event Tarpaulin</figcaption></figure>
+        <figure class="gallery-item" data-cat="sign"><img src="images/Sinages/sinage8.jpg" alt="Signage" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>Build Up Letters Signage</figcaption></figure>
+        <figure class="gallery-item" data-cat="tarp"><img src="images/Tarpaulin Printing/tarpaulin1.jpg" alt="Tarpaulin" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>Store Tarpaulin</figcaption></figure>
+        <figure class="gallery-item" data-cat="tarp"><img src="images/Tarpaulin Printing/tarpaulin2.jpg" alt="Tarpaulin" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>3D with Lights Tarpaulin</figcaption></figure>
+        <figure class="gallery-item" data-cat="tarp"><img src="images/Tarpaulin Printing/tarpaulin7.jpg" alt="Tarpaulin" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>Event Tarpaulin</figcaption></figure>
         <figure class="gallery-item" data-cat="give"><img src="images/Giveaways/giveaways3.jpg" alt="Giveaways" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>Corporate Giveaways</figcaption></figure>
+        <figure class="gallery-item" data-cat="give"><img src="images/Giveaways/giveaways16.jpg" alt="Giveaways" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>Corporate Giveaways</figcaption></figure>
+        <figure class="gallery-item" data-cat="give"><img src="images/Giveaways/giveaways15.jpg" alt="Giveaways" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>Corporate Giveaways</figcaption></figure>
         <figure class="gallery-item" data-cat="give"><img src="images/Giveaways/giveaways6.jpg" alt="Branded items" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>Branded Merchandise</figcaption></figure>
+        <figure class="gallery-item" data-cat="give"><img src="images/Giveaways/giveaways9.jpg" alt="Branded items" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>Branded Merchandise</figcaption></figure>
+        <figure class="gallery-item" data-cat="give"><img src="images/Giveaways/giveaways8.jpg" alt="Branded items" onerror="this.onerror=null;this.src='https://placehold.co/420x320/CCCCCC/333333?text=No+Photo';"><figcaption>Branded Merchandise</figcaption></figure>
       </div>
     </div>
   </section>
@@ -211,21 +305,6 @@
       <div class="stat reveal"><strong data-count="500">0</strong><span>+ Clients Served</span></div>
       <div class="stat reveal"><strong data-count="25000">0</strong><span>+ Prints Made</span></div>
       <div class="stat reveal"><strong data-count="98">0</strong><span>% Satisfaction</span></div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="section" id="testimonials">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Testimonials</p>
-        <h2>What Our Clients Say</h2>
-      </div>
-      <div class="quotes">
-        <blockquote class="quote reveal"><p>"Super bilis at sobrang ganda ng tarp! Repeat customer na ako."</p><footer>— Angel Dannen</footer></blockquote>
-        <blockquote class="quote reveal"><p>"Professional team and vibrant colors. Our business cards look premium."</p><footer>— Jhun Dela Cruz</footer></blockquote>
-        <blockquote class="quote reveal"><p>"Design nila really astig—kahit anong style, ang ganda ng resulta."</p><footer>— Ricardo Cervantes</footer></blockquote>
-      </div>
     </div>
   </section>
 
@@ -243,7 +322,19 @@
       </div>
       
       <!-- FORMSPREE DIRECT EMAIL SETUP -->
-      <form class="quote-form reveal" id="quoteForm" action="https://formspree.io/f/ejayprintsandadvertising@gmail.com" method="POST">
+      <!--
+        IMPORTANT: Replace YOUR_FORMSPREE_ID below with your real Formspree form ID.
+        Formspree does NOT accept a raw email address in the action URL — that is
+        why the form was failing before. To get your ID:
+          1. Go to https://formspree.io and sign up (free) with ejayprintsandadvertising@gmail.com
+          2. Create a new form; Formspree will give you an endpoint like
+             https://formspree.io/f/abcd1234
+          3. Confirm the verification email Formspree sends to your Gmail inbox
+          4. Paste that endpoint into the action attribute below, replacing
+             https://formspree.io/f/YOUR_FORMSPREE_ID
+        Once a real ID is in place, submissions will be emailed straight to your Gmail.
+      -->
+      <form class="quote-form reveal" id="quoteForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
         <input type="hidden" name="_subject" value="New EJay Website Quote Request!" />
         <h3>Get a Free Quote</h3>
         <div class="row">
@@ -284,11 +375,11 @@
           <p><strong>🕘 Hours</strong> Mon–Sat: 8AM – 6PM</p>
           <div class="contact-actions">
             <a class="btn btn-primary" href="https://www.facebook.com/profile.php?id=61566609137425" target="_blank" rel="noopener">Message us on Facebook</a>
-            <a class="btn btn-outline" href="https://www.google.com/maps/place/EJAY+PRINT+AND+ADVERTISING/@14.7691398,120.9898358,17z/" target="_blank" rel="noopener">Get Directions</a>
+            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=EJAY+PRINT+AND+ADVERTISING%2C+175+Camalig%2C+Meycuayan%2C+Bulacan" target="_blank" rel="noopener">Get Directions</a>
           </div>
         </div>
         <div class="contact-map reveal">
-          <iframe title="EJay Printing & Advertising location" src="https://maps.google.com/maps?q=14.7691346,120.9924107&z=16&output=embed" loading="lazy"></iframe>
+          <iframe title="EJay Printing & Advertising location" src="https://maps.google.com/maps?q=EJAY+PRINT+AND+ADVERTISING%2C+175+Camalig%2C+Meycuayan%2C+Bulacan&z=16&output=embed" loading="lazy"></iframe>
         </div>
       </div>
     </div>
