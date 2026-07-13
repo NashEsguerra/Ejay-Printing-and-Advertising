@@ -252,6 +252,11 @@ const serviceImages = {
 // dropping the two matching files into images/Exhibit Booth/.
 const boothProjects = [
    {
+    title: "SMX MOA Booth",
+    mockup: "images/Exhibit Booth/Mock up HFC.jpg",
+    final: "images/Exhibit Booth/HFC.jpg",
+  },
+   {
     title: "SM Aura Premier Booth",
     mockup: "images/Exhibit Booth/Quantas Mock up.jpg",
     final: "images/Exhibit Booth/quantas.jpg",
