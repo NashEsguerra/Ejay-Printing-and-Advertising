@@ -137,7 +137,6 @@ const serviceImages = {
     "images/Sinages/sinage3.jpg",
     "images/Sinages/sinage4.jpg",
     "images/Sinages/sinage5.jpg",
-    "images/Sinages/sinage6.jpg",
     "images/Sinages/sinage7.jpg",
     "images/Sinages/sinage8.jpg",
     "images/Sinages/sinage10.jpg",
